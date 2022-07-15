@@ -1,1 +1,175 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+$nav-width: 250px;
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+}
+.nav {
+  width: $nav-width;
+  min-height: 100vh;
+  background-color: #191718;
+  color: #fff;
+  position: fixed;
+  transition: .3s;
+  height: 100%;
+  ul > li {
+    padding: 12px;
+    border-bottom: 1px solid #fff;
+    font-weight: bold;
+    text-transform: capitalize;
+    list-style: none;
+    &:hover{
+      background: #5c5c5c;
+    }
+  }
+}
+
+.open {
+  width: $nav-width !important;
+  ul{
+    display: block !important;
+  }
+}
+
+.header {
+    padding: 20px 12px;
+    display: none;
+    span {
+      padding: 8px 12px;
+      border: 1px solid silver;
+      border-radius: 5px;
+      cursor: pointer;
+      &:hover {
+        box-shadow: 1px 5px 24px 0 rgb(68 102 242 / 5%);
+    }
+  }
+}
+
+.page {
+    width: calc(100% - 250px);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin-left: 250px;
+    .content {
+      height: calc(100% - 80px);
+      padding: 0 129px;
+    }
+    .footer {
+      height: 79px;
+      padding: 0 129px;
+      border-top: 1px solid #dedede;
+      color: #3e3e3e;
+      display: flex;
+      align-items: center;
+    }
+}
+
+.logo {
+    display:flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+
+.description {
+    text-align: center;
+    background: #EFEFEF;
+    padding: 38px 269px;
+    margin-bottom: 40px;
+    p {
+      font-weight: 700;
+      font-size: 18px;
+      margin-bottom: 18px;
+  }
+}
+
+.categories {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+    img {
+      float: left;
+    }
+    .item {
+      margin-bottom: 24px;
+      &:not(:last-child) {
+        margin-right: 24px;
+    }
+  }
+}
+
+/*
+* responsive
+*/
+
+/*
+*mobile
+*/
+
+@media (max-width: 576px) {
+    .page .content {
+        padding: 0 24px;
+    }
+
+    .description {
+        padding: 24px;
+    }
+
+    .nav {
+        width: 0;
+    }
+    .nav ul {
+      display: none;
+    }
+
+    .page {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .header {
+        display: block;
+    }
+
+}
+@media (max-width: 992px) {
+    .page .content {
+        padding: 0 32px;
+    }
+
+    .description {
+        padding: 24px 24px;
+    }
+
+}
+@media (max-width: 1200px) {
+    .page .content {
+        padding: 0 64px;
+    }
+
+    .description {
+        padding: 24px 64px;
+    }
+
+
+}
+
+@media (max-width: 1400px) {
+    .description {
+        padding: 24px 64px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .categories {
+        flex-direction: row;
+        margin-bottom: 24px;
+    }
+}

@@ -1,0 +1,20 @@
+<div class="container">
+  <div style="d-flex">
+    <div class="header">
+        <span (click)="collap = !collap">=</span>
+    </div>
+    <div>
+      <div class="nav" [ngClass]="collap ? 'open' : ''">
+        <app-sibar></app-sibar>
+      </div>
+
+      <div class="page">
+
+        <router-outlet></router-outlet>
+
+        <app-footer></app-footer>
+
+      </div>
+    </div>
+  </div>
+</div>
